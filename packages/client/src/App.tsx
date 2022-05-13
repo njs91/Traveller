@@ -1,6 +1,6 @@
 import React from 'react'
 import type { FC } from 'react'
-import { ChakraProvider, Box, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, Box, extendTheme, ColorModeProvider } from '@chakra-ui/react'
 import { Route, Routes } from 'react-router-dom'
 import { TopBar } from './TopBar'
 import { Home } from './Home'
@@ -17,13 +17,15 @@ const fonts = {
 
 export const App: FC = () => (
   <ChakraProvider theme={extendTheme({ fonts })}>
-    <TopBar />
-    <Box textAlign="center">
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="wish-list" element={<WishList />} />
-        <Route path="visited" element={<Visited />} />
-      </Routes>
-    </Box>
+    <ColorModeProvider options={{ initialColorMode: 'light' }}>
+      <TopBar />
+      <Box textAlign="center">
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="wish-list" element={<WishList />} />
+          <Route path="visited" element={<Visited />} />
+        </Routes>
+      </Box>
+    </ColorModeProvider>
   </ChakraProvider>
 )

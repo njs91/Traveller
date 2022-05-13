@@ -1,5 +1,16 @@
 # Traveller - Smart front end take-home technical test
 
+## Information
+
+- To change the visited or wishlist status of a city, search for one and check/uncheck its respective checkbox
+- The visited and wishlist pages do not show their respective columns since they would all be true
+- The search button is debounced to prevent excess API-calls
+
+## Note
+
+- Cache updates not working - see mutations.ts
+- No unit tests
+
 ## Goals
 
 1.  Allow the user to search for cities using the provided input.

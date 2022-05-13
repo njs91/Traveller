@@ -7,6 +7,7 @@ import { ColorModeSwitcher } from './ColorModeSwitcher'
 export const TopBar: FC = () => {
   const { colorMode } = useColorMode()
   const image = colorMode === 'light' ? 'smart-logo.svg' : 'smart-logo-contrast.svg'
+
   return (
     <Box
       as="nav"
